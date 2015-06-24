@@ -1,0 +1,43 @@
+{
+  "name": "kendo-dashboard",
+  "description": "Kendo widgets dashboard",
+  "version": "0.0.1",
+  "main": "server.js",
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "Officernd"
+  ],
+  "author": "Miroslav Miroslavov",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "lodash": "*",
+    "swig": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-angular-templates": "*",
+    "grunt-bump": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-requirejs": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-karma": "*",
+    "grunt-replace": "*",
+    "grunt-smushit": "*",
+    "jshint-junit-reporter": "*",
+    "karma": "*",
+    "karma-chrome-launcher": "*",
+    "karma-jasmine": "*",
+    "karma-junit-reporter": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-requirejs": "*",
+    "requirejs": "*"
+  }
+}
