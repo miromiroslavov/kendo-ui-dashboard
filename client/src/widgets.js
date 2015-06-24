@@ -23,9 +23,6 @@ angular.module('dashboard')
     .controller('KendoSliderController', ['$scope', '$stateParams', '$controller', function ($scope, $stateParams, $controller) {
         $controller('WidgetController', {$scope: $scope, $stateParams: $stateParams});
     }])
-    .controller('KendoGridController', ['$scope', '$stateParams', '$controller', function ($scope, $stateParams, $controller) {
-        $controller('WidgetController', {$scope: $scope, $stateParams: $stateParams});
-    }])
     .controller('KendoMenuController', ['$scope', '$stateParams', '$controller', function ($scope, $stateParams, $controller) {
         $controller('WidgetController', {$scope: $scope, $stateParams: $stateParams});
     }])
