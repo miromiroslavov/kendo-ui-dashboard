@@ -14,8 +14,16 @@ app.get('/', function (req, res, err) {
     res.render('index');
 });
 
-app.get('/widgets/*', function (req, res, err) {
-    res.render('index');
+app.get('/app1', function (req, res, err) {
+    res.render('app1');
+});
+
+app.get('/app2', function (req, res, err) {
+    res.render('app2');
+});
+
+app.get('/app3', function (req, res, err) {
+    res.render('app3');
 });
 
 app.listen(3031, function () {

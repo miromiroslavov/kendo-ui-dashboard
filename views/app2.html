@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<main ng-app="app2" ng-controller="MainController">
+    <header><h1>App 2</h1></header>
+
+    <aside class="col-sm-4">
+        <span>{{storage.message}}</span>
+    </aside>
+
+    <section class="col-sm-8">
+    </section>
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="/src/app2.js"></script>
+{% endblock %}

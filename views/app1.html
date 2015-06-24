@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<main ng-app="app1" ng-controller="MainController">
+    <header><h1>App 1</h1></header>
+
+    <aside class="col-sm-4">
+        <input ng-model="message">
+        <button ng-click="send(message)">Send</button>
+    </aside>
+
+    <section class="col-sm-8">
+    </section>
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="/src/app1.js"></script>
+{% endblock %}
