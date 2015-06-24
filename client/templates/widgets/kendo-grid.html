@@ -1,2 +1,19 @@
+<div>
+    <label>
+        Category: <input ng-model="continent.category">
+    </label>
+
+    <label>
+        Value: <input ng-model="continent.value">
+    </label>
+
+    <label>
+        Color: <input ng-model="continent.color">
+    </label>
+
+    <button class="btn" ng-click="addContinent(continent)">Add</button>
+
+</div>
+
 <div kendo-grid
-     k-data-source="dataSource"></div>
+     k-data-source="continents"></div>
