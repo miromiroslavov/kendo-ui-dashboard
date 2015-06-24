@@ -61,18 +61,43 @@ angular.module('dashboard')
 
             };
 
+            $scope.getContinentFromServer = function () {
+                var serverContinent = {
+                        category: "Europe",
+                        value: 53,
+                        color: "#fff"
+                    },
+                    localContinent = $scope.continent;
+
+                $scope.continents.remove(localContinent);
+
+                localContinent = _.extend(localContinent, serverContinent);
+
+                $scope.continents.add(localContinent);
+            };
+
             $scope.kendoOptions = {
                 dataSource: $scope.continents,
                 selectable: true,
                 change: function (e) {
-                    var selectedRows = this.select();
-                    for (var i = 0; i < selectedRows.length; i++) {
-                        var that = this;
-                        $scope.safeApply($scope, function(){
-                            $scope.continent = that.dataItem(selectedRows[i]);
+                    var that = this,
+                        selectedRows = that.select();
+
+                    if (selectedRows.length === 1) {
+                        $scope.safeApply($scope, function () {
+                            $scope.continent = that.dataItem(selectedRows[0]);
                         });
-                        break;
                     }
                 }
             };
+
+            $scope.rightClick = function () {
+                $scope.menu1.open();
+            };
+
+            $scope.$watch("continent.value", function () {
+                //if($scope.grid) {
+                //    $scope.grid.refresh();
+                //}
+            });
         }]);

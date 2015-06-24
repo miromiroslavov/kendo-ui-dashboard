@@ -9,7 +9,7 @@
         </label>
 
         <label>
-            Value: <input kendo-numeric-text-box ng-model="continent.value">
+            Value: <input kendo-numeric-text-box k-ng-model="continent.value">
         </label>
 
         <label>
@@ -22,11 +22,21 @@
 </div>
 
 <div>
+    <button class="btn" ng-click="getContinentFromServer()">Sync Data</button>
 </div>
 
-<div kendo-grid
+<div kendo-grid="grid"
+     id="grid1"
      k-options="kendoOptions">
 </div>
+
+<ul kendo-context-menu="menu1"
+    k-filter="'#grid1'"
+    k-on-select="onSelect(kendoEvent)">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
 
 <div kendo-chart
      k-series-defaults="{ type: 'pie' }"
