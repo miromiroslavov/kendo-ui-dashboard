@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="//cdn.kendostatic.com/2015.1.429/styles/kendo.dataviz.default.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/common.css">
 
     <base href="/">
 </head>
 <main ng-controller="MainController">
+    <custom-header></custom-header>
     <header>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -34,14 +36,14 @@
             </div>
         </nav>
     </header>
-    <aside class="col-sm-3">
+    <aside class="col-sm-4">
         <h4>Widgets</h4>
 
-        <div kendo-tree-view k-data-source="widgets">
+        <kendo-tree-view  k-data-source="widgets">
             <span k-template>
                  <a ui-sref="widgets({widget: dataItem.value})">{{dataItem.text}}</a>
              </span>
-        </div>
+        </kendo-tree-view>
     </aside>
 
     <section class="col-sm-8">
@@ -61,6 +63,8 @@
 <script src="/src/dashboard.js"></script>
 <script src="/src/widgets.js"></script>
 <script src="/src/kendoGridController.js"></script>
+<script src="/src/navigationService.js"></script>
+<script src="/src/customHeader.js"></script>
 <body>
 
 </body>

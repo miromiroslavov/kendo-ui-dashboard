@@ -1,9 +1,10 @@
 angular.module('dashboard')
-    .controller('KendoGridController', ['$scope', '$stateParams', '$controller',
-        function ($scope, $stateParams, $controller) {
+    .controller('KendoGridController', ['$scope', '$stateParams', '$controller', 'navigationService',
+        function ($scope, $stateParams, $controller, navigationService) {
             $controller('WidgetController', {$scope: $scope, $stateParams: $stateParams});
 
             $scope.continent = {};
+            $scope.languages = [{text: "Spanish"}, {text: "English"}];
 
             $scope.categories = new kendo.data.DataSource({
                 data: [
@@ -62,6 +63,7 @@ angular.module('dashboard')
             };
 
             $scope.getContinentFromServer = function () {
+                // TODO: Detect changes from the server.
                 var serverContinent = {
                         category: "Europe",
                         value: 53,
@@ -91,13 +93,17 @@ angular.module('dashboard')
                 }
             };
 
-            $scope.rightClick = function () {
-                $scope.menu1.open();
-            };
-
-            $scope.$watch("continent.value", function () {
-                //if($scope.grid) {
-                //    $scope.grid.refresh();
-                //}
+            $scope.$watch("continent", function () {
+                // TODO: Enable/Disable items in the Context Menu.
+                if ($scope.continent.category === "Europe") {
+                    $scope.languages = [{text: "Spanish"}, {text: "English"}];
+                }
+                else if ($scope.continent.category === "Asia") {
+                    $scope.languages = [{text: "Chines"}, {text: "Viatnamese"}];
+                }
             });
+
+            $scope.calculate = function () {
+                $scope.result = navigationService.calculate(5, 10);
+            };
         }]);

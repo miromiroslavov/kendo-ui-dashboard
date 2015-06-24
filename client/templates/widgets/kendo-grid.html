@@ -1,3 +1,4 @@
+<custom-header></custom-header>
 <div>
     <form class="form-horizontal">
         <label>
@@ -32,11 +33,14 @@
 
 <ul kendo-context-menu="menu1"
     k-filter="'#grid1'"
-    k-on-select="onSelect(kendoEvent)">
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
+    k-on-select="onSelect(kendoEvent)"
+    k-data-source="languages">
 </ul>
+
+<div>
+    <button ng-click="calculate()">Calculate</button>
+    <p>{{result}}</p>
+</div>
 
 <div kendo-chart
      k-series-defaults="{ type: 'pie' }"

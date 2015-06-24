@@ -17,8 +17,12 @@ angular.module('dashboard')
             }
         }
     }])
-    .controller('KendoColorPickerController', ['$scope', '$stateParams', '$controller', function ($scope, $stateParams, $controller) {
+    .controller('KendoColorPickerController', ['$scope', '$stateParams', '$controller', 'navigationService', function ($scope, $stateParams, $controller, navigationService) {
         $controller('WidgetController', {$scope: $scope, $stateParams: $stateParams});
+
+        $scope.calculate = function () {
+            $scope.result = navigationService.calculate(5, 10);
+        };
     }])
     .controller('KendoSliderController', ['$scope', '$stateParams', '$controller', function ($scope, $stateParams, $controller) {
         $controller('WidgetController', {$scope: $scope, $stateParams: $stateParams});
