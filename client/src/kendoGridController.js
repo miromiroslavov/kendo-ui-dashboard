@@ -3,6 +3,28 @@ angular.module('dashboard')
         function ($scope, $stateParams, $controller) {
             $controller('WidgetController', {$scope: $scope, $stateParams: $stateParams});
 
+            $scope.continent = {};
+
+            $scope.categories = new kendo.data.DataSource({
+                data: [
+                    {
+                        name: "Asia"
+                    },
+                    {
+                        name: "Europe"
+                    },
+                    {
+                        name: "Latin America"
+                    },
+                    {
+                        name: "Middle East"
+                    },
+                    {
+                        name: "North America"
+                    }
+                ]
+            });
+
             $scope.continents = new kendo.data.DataSource({
                 data: [{
                     category: "Asia",
@@ -33,5 +55,24 @@ angular.module('dashboard')
 
             $scope.addContinent = function (continent) {
                 $scope.continents.add(continent);
+            };
+
+            $scope.updateContinent = function () {
+
+            };
+
+            $scope.kendoOptions = {
+                dataSource: $scope.continents,
+                selectable: true,
+                change: function (e) {
+                    var selectedRows = this.select();
+                    for (var i = 0; i < selectedRows.length; i++) {
+                        var that = this;
+                        $scope.safeApply($scope, function(){
+                            $scope.continent = that.dataItem(selectedRows[i]);
+                        });
+                        break;
+                    }
+                }
             };
         }]);

@@ -1,5 +1,5 @@
 angular.module('dashboard')
-    .controller('MainController', ['$scope', '$state', '$stateParams', function ($scope) {
+    .controller('MainController', ['$rootScope', '$scope', function ($rootScope, $scope) {
         var widgets = new kendo.data.HierarchicalDataSource({
             data: [
                 {
@@ -25,4 +25,38 @@ angular.module('dashboard')
         });
 
         $scope.widgets = widgets;
+
+        $rootScope.safeApply = function () {
+            var $scope, fn, force = false;
+            if (arguments.length == 1) {
+                var arg = arguments[0];
+                if (typeof arg == 'function') {
+                    fn = arg;
+                }
+                else {
+                    $scope = arg;
+                }
+            }
+            else {
+                $scope = arguments[0];
+                fn = arguments[1];
+                if (arguments.length == 3) {
+                    force = !!arguments[2];
+                }
+            }
+            $scope = $scope || this;
+            fn = fn || function () {
+            };
+            if (force || !$scope.$$phase) {
+                if ($scope.$apply) {
+                    $scope.$apply(fn);
+                }
+                else {
+                    $scope.apply(fn);
+                }
+            }
+            else {
+                fn();
+            }
+        };
     }]);
