@@ -7,13 +7,18 @@
 {% block content %}
 <main ng-app="gestion_recursos" ng-controller="MainController">
     <header><h1>Gestion Recursos</h1></header>
-
-    <aside class="col-sm-4">
-        <span>{{storage.message}}</span>
-    </aside>
-
-    <section class="col-sm-8">
-    </section>
+    
+    <form ng-if="formularios">
+        <label>Id
+            <span>{{formularios.id}}</span>
+        </label>
+        <label>Category
+            <input ng-model="formularios.category">
+        </label>
+        <label>Value
+            <input ng-model="formularios.value">
+        </label>
+    </form>
 </main>
 {% endblock %}
 
