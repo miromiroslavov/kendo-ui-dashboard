@@ -1,3 +1,28 @@
-.custom-header {
-    color: red;
+header {
+    position: relative;
+}
+
+.left-panel {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    top: 0;
+    bottom: 0;
+}
+
+.top-panel {
+    position: absolute;
+    left: 60px;
+    right: 0;
+    top: 0;
+    height: 20%;
+    background: gray;
+}
+
+.bottom-panel {
+    position: absolute;
+    left: 60px;
+    right: 0;
+    top: 20%;
+    bottom: 0;
 }

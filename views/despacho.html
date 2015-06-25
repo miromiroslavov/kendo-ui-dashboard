@@ -2,40 +2,20 @@
 
 {% block content %}
 <main ng-app="despacho">
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Telefonica</a>
-                </div>
-
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/gestion_recursos" target="_blank">Gestion Recursos</a></li>
-                        <li><a href="/gis" target="_blank">GIS</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <aside class="col-sm-4">
-        <input ng-model="message">
-        <button ng-click="send(message)">Send</button>
+    <aside class="left-panel">
     </aside>
 
-    <section class="col-sm-8">
+    <section class="main-panel">
+        <div class="top-panel">
+
+        </div>
+        <div class="bottom-panel">
+
+        </div>
     </section>
 </main>
 {% endblock %}
 
 {% block script %}
-<script src="/client/despacho/app.js"></script>
+<script src="/despacho/app.js"></script>
 {% endblock %}
