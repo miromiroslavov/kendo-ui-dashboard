@@ -8,9 +8,8 @@
 <main ng-app="despacho" ng-controller="MainController">
     <aside class="left-panel">
         <div class="btn-group-vertical" role="group" aria-label="...">
-            <button class="btn"><span class="glyphicon glyphicon-cloud"></span></button>
-            <button class="btn"><span class="glyphicon glyphicon-envelope"></span></button>
-            <button class="btn"><span class="glyphicon glyphicon-star-empty"></span></button>
+            <a class="btn" ui-sref="formularios()"><span class="glyphicon glyphicon-cloud"></span></a>
+            <a class="btn" ui-sref="listas_globales()"><span class="glyphicon glyphicon-envelope"></span></a>
         </div>
     </aside>
 
@@ -19,9 +18,7 @@
 
         </div>
         <div class="bottom-panel">
-            <kendo-grid k-options="gridOptions">
-
-            </kendo-grid>
+            <div ui-view></div>
         </div>
     </section>
 </main>
@@ -29,4 +26,7 @@
 
 {% block script %}
 <script src="/despacho/app.js"></script>
+<script src="/despacho/mainController.js"></script>
+<script src="/despacho/formulariosController.js"></script>
+<script src="/despacho/listasGlobalesController.js"></script>
 {% endblock %}

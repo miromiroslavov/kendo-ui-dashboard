@@ -1,39 +1,16 @@
-angular.module('despacho', ['ngStorage', "kendo.directives"])
-    .controller('MainController', ['$rootScope', '$scope', '$localStorage', function ($rootScope, $scope, $localStorage) {
-        $scope.send = function (msg) {
-            $localStorage.message = msg;
-        };
-
-        $scope.gridOptions = {
-            dataSource: {
-                data: [{
-                    category: "Asia",
-                    value: 53.8,
-                    color: "#9de219"
-                },{
-                    category: "Europe",
-                    value: 16.1,
-                    color: "#90cc38"
-                },{
-                    category: "Latin America",
-                    value: 11.3,
-                    color: "#068c35"
-                },{
-                    category: "Africa",
-                    value: 9.6,
-                    color: "#006634"
-                },{
-                    category: "Middle East",
-                    value: 5.2,
-                    color: "#004d38"
-                },{
-                    category: "North America",
-                    value: 3.6,
-                    color: "#033939"
-                }]
-            },
-            scrollable: true,
-            sortable: true,
-            filterable: true
-        };
-    }]);
+angular.module('despacho', ["ngStorage", 'ui.router', 'kendo.directives'])
+    .config(['$stateProvider',
+        function ($stateProvider) {
+            $stateProvider.
+                state('formularios', {
+                    url: '/formularios',
+                    templateUrl: "despacho/formularios.html",
+                    controller: "FormulariosController"
+                }).
+                state('listas_globales', {
+                    url: '/listas_globales',
+                    templateUrl: "despacho/listas_globales.html",
+                    controller: "ListasGlobalesController"
+                });
+        }]
+);
