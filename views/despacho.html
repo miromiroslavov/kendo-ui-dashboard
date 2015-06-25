@@ -1,7 +1,11 @@
 {% extends 'layout.html' %}
 
+{% block title %}
+<title>Despacho</title>
+{% endblock %}
+
 {% block content %}
-<main ng-app="despacho">
+<main ng-app="despacho" ng-controller="MainController">
     <aside class="left-panel">
         <div class="btn-group-vertical" role="group" aria-label="...">
             <button class="btn"><span class="glyphicon glyphicon-cloud"></span></button>
@@ -15,7 +19,9 @@
 
         </div>
         <div class="bottom-panel">
+            <kendo-grid k-options="gridOptions">
 
+            </kendo-grid>
         </div>
     </section>
 </main>
