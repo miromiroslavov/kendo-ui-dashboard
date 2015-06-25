@@ -1,5 +1,5 @@
 angular.module('despacho')
-    .controller('ListasGlobalesController', ['$rootScope', '$scope', '$localStorage', "$state", function ($rootScope, $scope, $localStorage, $state) {
+    .controller('ListasGlobalesController', ['$rootScope', '$scope', '$localStorage', "$state", "$window", function ($rootScope, $scope, $localStorage, $state, $window) {
         $scope.listas_globales = {
             dataSource: {
                 data: [{
@@ -46,6 +46,9 @@ angular.module('despacho')
             var selectedRows = grid.select();
             var item = grid.dataItem(selectedRows[0]);
             $localStorage.id = item.id;
+
+            // Keep in local storage when you open it once.
+            $window.open("/gestion_recursos", "_blank")
         };
 
         $("#listasGrid").on("mousedown", "tr[role='row']", function (e) {
