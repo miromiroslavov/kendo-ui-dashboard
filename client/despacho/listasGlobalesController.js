@@ -39,7 +39,5 @@ angular.module('despacho')
             var selectedRows = grid.select();
             var item = grid.dataItem(selectedRows[0]);
             $state.go("formularios", {id: item.id});
-
-
         };
     }]);

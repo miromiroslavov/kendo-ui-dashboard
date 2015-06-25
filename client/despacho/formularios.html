@@ -1,1 +1,11 @@
-
+<form ng-if="formularios">
+    <label>Id
+        <span>{{formularios.id}}</span>
+    </label>
+    <label>Category
+        <input ng-model="formularios.category">
+    </label>
+    <label>Value
+        <input ng-model="formularios.value">
+    </label>
+</form>
