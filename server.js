@@ -11,19 +11,15 @@ app.set('view engine', 'html');
 app.use('/', express.static(__dirname + '/client'));
 
 app.get('/', function (req, res, err) {
-    res.render('index');
+    res.render('despacho');
 });
 
-app.get('/app1', function (req, res, err) {
-    res.render('app1');
+app.get('/gestion_recursos', function (req, res, err) {
+    res.render('gestion_recursos');
 });
 
-app.get('/app2', function (req, res, err) {
-    res.render('app2');
-});
-
-app.get('/app3', function (req, res, err) {
-    res.render('app3');
+app.get('/gis', function (req, res, err) {
+    res.render('gis');
 });
 
 app.listen(3031, function () {

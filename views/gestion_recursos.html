@@ -1,8 +1,8 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<main ng-app="app2" ng-controller="MainController">
-    <header><h1>App 2</h1></header>
+<main ng-app="gestion_recursos" ng-controller="MainController">
+    <header><h1>Gestion Recursos</h1></header>
 
     <aside class="col-sm-4">
         <span>{{storage.message}}</span>
@@ -14,5 +14,5 @@
 {% endblock %}
 
 {% block script %}
-<script src="/src/app2.js"></script>
+<script src="/gestion_recursos/app.js"></script>
 {% endblock %}
