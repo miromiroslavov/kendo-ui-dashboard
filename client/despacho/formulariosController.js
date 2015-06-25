@@ -10,5 +10,11 @@ angular.module('despacho')
                 category: "Europe",
                 value: 20
             }
+        } else {
+            $scope.formularios = {
+                id: 0,
+                category: "",
+                value: 0
+            }
         }
     }]);
