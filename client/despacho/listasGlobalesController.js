@@ -40,4 +40,12 @@ angular.module('despacho')
             var item = grid.dataItem(selectedRows[0]);
             $state.go("formularios", {id: item.id});
         };
+
+        $("#listasGrid").on("mousedown", "tr[role='row']", function (e) {
+            if (e.which === 3) { // which is the button and 3 is right button
+                $("tr").removeClass("k-state-selected");
+
+                $(this).addClass("k-state-selected");
+            }
+        });
     }]);
