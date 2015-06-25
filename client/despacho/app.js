@@ -3,7 +3,7 @@ angular.module('despacho', ["ngStorage", 'ui.router', 'kendo.directives'])
         function ($stateProvider) {
             $stateProvider.
                 state('formularios', {
-                    url: '/formularios',
+                    url: '/formularios/:id',
                     templateUrl: "despacho/formularios.html",
                     controller: "FormulariosController"
                 }).
